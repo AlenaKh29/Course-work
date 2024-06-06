@@ -7,12 +7,13 @@ from tqdm import tqdm
 class UserVK:
     """   access_token = ''  - сюда необходимо вставить токен для ВК
           user_id = ''  - id пользователя ВК
+          number_of_photos = '' - количество фото (если желаемое количество != 5 фото)
           (строки с переменными для ввода находятся в конце программы)
     """
 
     URL = 'https://api.vk.com/method/photos.get'
 
-    def __init__(self, access_token, user_id, count_photos='6', version='5.236'):
+    def __init__(self, access_token, user_id, count_photos='5', version='5.236'):
         self.token = access_token
         self.id = user_id
         self.count = count_photos
@@ -88,7 +89,8 @@ class UserYandex:
 access_token = ''   # введите токен VK
 user_id = ''   # введите id пользователя VK
 yandex_token = ''   # введите токен с Полигона Яндекс.Диска
-vk = UserVK(access_token, user_id)
+#  number_of_photos = ''
+vk = UserVK(access_token, user_id)   # добавить number_of_photos, если желаемое количество фото != 5
 yandex = UserYandex(yandex_token)
 vk.select_data_for_uploading()
 print(vk.create_info_file())
