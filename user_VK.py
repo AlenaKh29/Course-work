@@ -64,7 +64,7 @@ if __name__ == '__main__':
     #  Проверка корректности введённых id или токена.
     config = configparser.ConfigParser()
     config.read("settings.ini")
-    vk_id = config['VK']['user']
-    access_token = config['VK']['access_token']
+    vk_id = config['VK']['vk_user']
+    access_token = config['VK']['vk_token']
     vk = UserVK(access_token, vk_id)
     print(vk.get_photos_data())
